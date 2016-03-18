@@ -24,7 +24,7 @@ local ina219_mt = Class(ina219)
         print( "Power: "..power)
     end
     
-    function ina219:init()
+    function ina219:init()--TODO hay que poder establecer diferentes address
     	i2c.setup(self.id, self.sda, self.scl, i2c.SLOW)
     	i2c.start(self.id)    
     	i2c.address( self.id, self.address, i2c.TRANSMITTER )
