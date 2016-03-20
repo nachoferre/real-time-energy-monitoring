@@ -1,7 +1,7 @@
 require'Class'
 ina219 = {
     id = 0,
-    address = 0x40,
+    address = 0x41,
     calibration_reg = 0x05,
     power_reg = 0x03,
     voltage_reg = 0x02,
@@ -24,8 +24,9 @@ local ina219_mt = Class(ina219)
         print( "Power: "..power)
     end
     
-    function ina219:init()--TODO hay que poder establecer diferentes address
-    	i2c.setup(self.id, self.sda, self.scl, i2c.SLOW)
+    function ina219:init(adr)
+    	ina219.address = adr
+        i2c.setup(self.id, self.sda, self.scl, i2c.SLOW)
     	i2c.start(self.id)    
     	i2c.address( self.id, self.address, i2c.TRANSMITTER )
     	number = i2c.write(self.id,self.calibration_reg)

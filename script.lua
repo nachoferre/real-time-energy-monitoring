@@ -1,10 +1,13 @@
 require ("ina219")
 
-ina219:init()--TODO poder usar mas de un objeto para poder comunicar con multiples ina
+ina_1_adr = 0x40
+ina_1 = ina219:new()
+ina_1:init(ina_1_adr)
 tmr.alarm(1, 2000, 1, function()
-    voltage = ina219:read_voltage()
-    current = ina219:read_current()
-    power = ina219:read_power()
+	
+    voltage = ina_1:read_voltage()
+    current = ina_1:read_current()
+    power = ina_1:read_power()
 
     print("================")
     print( "Voltage: "..voltage)
