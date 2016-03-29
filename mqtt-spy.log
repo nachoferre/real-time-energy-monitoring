@@ -1,0 +1,142 @@
+2016-03-22 11:29:26,765 INFO  [JavaFX Application Thread     ] [MainController                ]  - Default configuration file present (/root/mqtt-spy/mqtt-spy-configuration.xml) = true
+2016-03-22 11:29:26,777 INFO  [JavaFX Application Thread     ] [MainController                ]  - Loading configuration file from /root/mqtt-spy/mqtt-spy-configuration.xml
+2016-03-22 11:30:29,856 INFO  [JavaFX Application Thread     ] [EditConnectionsController     ]  - Selecting first item...
+2016-03-22 11:30:42,115 INFO  [JavaFX Application Thread     ] [EditConnectionController      ]  - Opening connection 
+2016-03-22 11:30:42,116 INFO  [JavaFX Application Thread     ] [EditConnectionController      ]  - Opening connection 
+2016-03-22 11:30:42,116 INFO  [JavaFX Application Thread     ] [EditConnectionController      ]  - Opening connection 
+2016-03-22 11:30:42,116 INFO  [JavaFX Application Thread     ] [EditConnectionController      ]  - Opening connection 
+2016-03-22 11:30:42,125 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (127.0.0.1:1883 -> tcp://127.0.0.1:1883)
+2016-03-22 11:30:42,131 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (iot.eclipse.org -> ssl://iot.eclipse.org)
+2016-03-22 11:30:42,132 ERROR [Thread-10                     ] [BaseConfigurationUtils        ]  - Invalid number format 
+2016-03-22 11:30:42,331 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (test.mosquitto.org -> ssl://test.mosquitto.org)
+2016-03-22 11:30:42,337 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (broker.mqtt-dashboard.com -> tcp://broker.mqtt-dashboard.com)
+2016-03-22 11:30:42,445 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=subscriptionsTitledPane, styleClass=titled-pane]'Subscriptions and received messages', AnchorPane@560bd141, pl.baczkowicz.mqttspy.ui.ConnectionController@36fdad59
+2016-03-22 11:30:42,448 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=publishMessageTitledPane, styleClass=titled-pane]'Publish message', AnchorPane@606bddda, pl.baczkowicz.mqttspy.ui.ConnectionController@36fdad59
+2016-03-22 11:30:42,449 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=newSubscriptionTitledPane, styleClass=titled-pane]'Define new subscription', AnchorPane@70a1814e, pl.baczkowicz.mqttspy.ui.ConnectionController@36fdad59
+2016-03-22 11:30:42,456 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=scriptedPublicationsTitledPane, styleClass=titled-pane]'Scripted publications', AnchorPane@5c0b4958, pl.baczkowicz.mqttspy.ui.ConnectionController@36fdad59
+2016-03-22 11:30:42,540 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to /mqtt-spy/test/
+2016-03-22 11:30:42,540 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for /mqtt-spy/test/
+2016-03-22 11:30:42,846 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=subscriptionsTitledPane, styleClass=titled-pane]'Subscriptions and received messages', AnchorPane@1c5e78c2, pl.baczkowicz.mqttspy.ui.ConnectionController@3c761f1f
+2016-03-22 11:30:42,847 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=publishMessageTitledPane, styleClass=titled-pane]'Publish message', AnchorPane@5b997bcf, pl.baczkowicz.mqttspy.ui.ConnectionController@3c761f1f
+2016-03-22 11:30:42,848 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=newSubscriptionTitledPane, styleClass=titled-pane]'Define new subscription', AnchorPane@2b0b9867, pl.baczkowicz.mqttspy.ui.ConnectionController@3c761f1f
+2016-03-22 11:30:42,850 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=scriptedPublicationsTitledPane, styleClass=titled-pane]'Scripted publications', AnchorPane@79a8d87d, pl.baczkowicz.mqttspy.ui.ConnectionController@3c761f1f
+2016-03-22 11:30:42,857 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to /test/#
+2016-03-22 11:30:42,857 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for /test/#
+2016-03-22 11:30:42,897 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2016-03-22 11:30:42,899 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=subscriptionsTitledPane, styleClass=titled-pane]'Subscriptions and received messages', AnchorPane@63af30ad, pl.baczkowicz.mqttspy.ui.ConnectionController@17ffa802
+2016-03-22 11:30:42,900 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=publishMessageTitledPane, styleClass=titled-pane]'Publish message', AnchorPane@576f9fdc, pl.baczkowicz.mqttspy.ui.ConnectionController@17ffa802
+2016-03-22 11:30:42,901 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=newSubscriptionTitledPane, styleClass=titled-pane]'Define new subscription', AnchorPane@1ae45bfa, pl.baczkowicz.mqttspy.ui.ConnectionController@17ffa802
+2016-03-22 11:30:42,903 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=scriptedPublicationsTitledPane, styleClass=titled-pane]'Scripted publications', AnchorPane@4e4dbb1a, pl.baczkowicz.mqttspy.ui.ConnectionController@17ffa802
+2016-03-22 11:30:42,908 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to /mqtt-spy/test/
+2016-03-22 11:30:42,908 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for /mqtt-spy/test/
+2016-03-22 11:30:42,913 INFO  [mqtt-spy [Reconnection Manager]] [ReconnectionManager           ]  - Starting connection test.mosquitto.org
+2016-03-22 11:30:42,948 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=subscriptionsTitledPane, styleClass=titled-pane]'Subscriptions and received messages', AnchorPane@6885454d, pl.baczkowicz.mqttspy.ui.ConnectionController@5fa0efe7
+2016-03-22 11:30:42,950 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=publishMessageTitledPane, styleClass=titled-pane]'Publish message', AnchorPane@29bfd82, pl.baczkowicz.mqttspy.ui.ConnectionController@5fa0efe7
+2016-03-22 11:30:42,951 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=newSubscriptionTitledPane, styleClass=titled-pane]'Define new subscription', AnchorPane@13f7aa87, pl.baczkowicz.mqttspy.ui.ConnectionController@5fa0efe7
+2016-03-22 11:30:42,954 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=scriptedPublicationsTitledPane, styleClass=titled-pane]'Scripted publications', AnchorPane@37f3eaea, pl.baczkowicz.mqttspy.ui.ConnectionController@5fa0efe7
+2016-03-22 11:30:42,959 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to /mqtt-spy/test/
+2016-03-22 11:30:42,960 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for /mqtt-spy/test/
+2016-03-22 11:30:43,041 INFO  [mqtt-spy [ConnectionRunnable for mqtt-spy@localhost]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [mqtt-spy] to server [[tcp://127.0.0.1:1883]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2016-03-22 11:30:43,074 INFO  [MQTT Call: mqtt-spy           ] [MqttConnectionResultHandler   ]  - mqtt-spy@localhost connected
+2016-03-22 11:30:43,408 INFO  [mqtt-spy [ConnectionRunnable for iot.eclipse.org]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [] to server [[ssl://iot.eclipse.org]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  sun.security.ssl.SSLSocketFactoryImpl@6a4c528e
+MqttVersion                 :  4
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2016-03-22 11:30:43,413 INFO  [mqtt-spy [ConnectionRunnable for test.mosquitto.org]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [] to server [[ssl://test.mosquitto.org]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  sun.security.ssl.SSLSocketFactoryImpl@638bcec2
+MqttVersion                 :  4
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2016-03-22 11:30:43,460 INFO  [mqtt-spy [ConnectionRunnable for broker.mqtt-dashboard.com]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [] to server [[tcp://broker.mqtt-dashboard.com]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  4
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2016-03-22 11:30:43,631 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2016-03-22 11:30:43,815 INFO  [MQTT Call:                    ] [MqttConnectionResultHandler   ]  - broker.mqtt-dashboard.com connected
+2016-03-22 11:30:43,815 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2016-03-22 11:30:43,846 INFO  [MQTT Call:                    ] [MqttConnectionResultHandler   ]  - test.mosquitto.org connected
+2016-03-22 11:30:43,847 WARN  [MQTT Con:                     ] [MqttConnectionResultHandler   ]  - Connecting to iot.eclipse.org failed
+MqttException (0) - javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:633)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1949)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:302)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:296)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1509)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:216)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:979)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:914)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1062)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1375)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1403)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1387)
+	at org.eclipse.paho.client.mqttv3.internal.SSLNetworkModule.start(SSLNetworkModule.java:93)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:619)
+	... 1 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:387)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:292)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:124)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1491)
+	... 10 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:146)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:131)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
+	... 16 more
+2016-03-22 11:30:43,849 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2016-03-22 11:30:43,853 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to /test/#
+2016-03-22 11:30:44,022 ERROR [JavaFX Application Thread     ] [BaseConfigurationUtils        ]  - Invalid number format 
+2016-03-22 11:30:55,497 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting mqtt-spy from [tcp://127.0.0.1:1883]
+2016-03-22 11:30:55,501 INFO  [MQTT Disc: mqtt-spy           ] [MqttDisconnectionResultHandler]  - mqtt-spy@localhost disconnected
+2016-03-22 11:30:57,308 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from /test/#
+2016-03-22 11:30:57,309 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [ssl://test.mosquitto.org]
+2016-03-22 11:30:57,413 INFO  [MQTT Disc:                    ] [MqttDisconnectionResultHandler]  - test.mosquitto.org disconnected
+2016-03-22 11:30:58,816 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [ssl://iot.eclipse.org]
+2016-03-22 11:31:00,652 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [tcp://broker.mqtt-dashboard.com]
+2016-03-22 11:31:00,653 INFO  [MQTT Disc:                    ] [MqttDisconnectionResultHandler]  - broker.mqtt-dashboard.com disconnected
+2016-03-26 19:50:08,430 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [ssl://test.mosquitto.org]
+2016-03-26 19:50:08,478 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [tcp://broker.mqtt-dashboard.com]
+2016-03-26 19:50:08,479 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [ssl://iot.eclipse.org]
+2016-03-26 19:50:08,479 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting mqtt-spy from [tcp://127.0.0.1:1883]
