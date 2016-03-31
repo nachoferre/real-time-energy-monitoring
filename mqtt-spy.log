@@ -140,3 +140,56 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 2016-03-26 19:50:08,478 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [tcp://broker.mqtt-dashboard.com]
 2016-03-26 19:50:08,479 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting  from [ssl://iot.eclipse.org]
 2016-03-26 19:50:08,479 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting mqtt-spy from [tcp://127.0.0.1:1883]
+2016-03-31 12:43:31,165 INFO  [JavaFX Application Thread     ] [ConfigurationManager          ]  - Creating UI property file
+2016-03-31 12:43:31,904 ERROR [JavaFX Application Thread     ] [StatisticsManager             ]  - Cannot read the statistics file from /root/mqtt-spy/mqtt-spy-stats.xml
+java.io.FileNotFoundException: Cannot load the file from /root/mqtt-spy/mqtt-spy-stats.xml
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromFile(XMLParser.java:308)
+	at pl.baczkowicz.mqttspy.stats.StatisticsManager.loadStats(StatisticsManager.java:89)
+	at pl.baczkowicz.mqttspy.ui.MainController.init(MainController.java:154)
+	at pl.baczkowicz.mqttspy.Main.start(Main.java:97)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.gtk.GtkApplication._runLoop(Native Method)
+	at com.sun.glass.ui.gtk.GtkApplication.lambda$null$49(GtkApplication.java:139)
+	at java.lang.Thread.run(Thread.java:745)
+2016-03-31 12:43:32,444 INFO  [JavaFX Application Thread     ] [MainController                ]  - Default configuration file present (/root/mqtt-spy/mqtt-spy-configuration.xml) = false
+2016-03-31 12:43:54,020 INFO  [JavaFX Application Thread     ] [MainController                ]  - Loading configuration file from /root/mqtt-spy/mqtt-spy-configuration.xml
+2016-03-31 12:44:01,177 INFO  [JavaFX Application Thread     ] [EditConnectionsController     ]  - Selecting first item...
+2016-03-31 12:45:09,003 INFO  [JavaFX Application Thread     ] [EditConnectionController      ]  - Opening connection root_124401187@192.168.43.247:1883
+2016-03-31 12:45:09,011 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.43.247:1883 -> tcp://192.168.43.247:1883)
+2016-03-31 12:45:09,022 ERROR [Thread-11                     ] [BaseConfigurationUtils        ]  - Invalid number format 
+2016-03-31 12:45:09,213 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=subscriptionsTitledPane, styleClass=titled-pane]'Subscriptions and received messages', AnchorPane@38a33764, pl.baczkowicz.mqttspy.ui.ConnectionController@75e17f38
+2016-03-31 12:45:09,215 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=publishMessageTitledPane, styleClass=titled-pane]'Publish message', AnchorPane@3961ec2f, pl.baczkowicz.mqttspy.ui.ConnectionController@75e17f38
+2016-03-31 12:45:09,216 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=newSubscriptionTitledPane, styleClass=titled-pane]'Define new subscription', AnchorPane@6bbdd63d, pl.baczkowicz.mqttspy.ui.ConnectionController@75e17f38
+2016-03-31 12:45:09,223 INFO  [JavaFX Application Thread     ] [NewPublicationController      ]  - TitledPane[id=scriptedPublicationsTitledPane, styleClass=titled-pane]'Scripted publications', AnchorPane@1c3becd, pl.baczkowicz.mqttspy.ui.ConnectionController@75e17f38
+2016-03-31 12:45:09,782 INFO  [mqtt-spy [ConnectionRunnable for root_124401187@192.168.43.247:1883]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [root_124401187] to server [[tcp://192.168.43.247:1883]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2016-03-31 12:45:09,804 INFO  [MQTT Call: root_124401187     ] [MqttConnectionResultHandler   ]  - root_124401187@192.168.43.247:1883 connected
+2016-03-31 12:45:09,805 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2016-03-31 12:45:36,560 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to ESP8266
+2016-03-31 12:45:36,560 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for ESP8266
+2016-03-31 12:45:36,627 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to ESP8266
+2016-03-31 12:45:50,071 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to ESP8266/current
+2016-03-31 12:45:50,071 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for ESP8266/current
+2016-03-31 12:45:50,140 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to ESP8266/current
+2016-03-31 12:45:58,505 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to ESP8266/voltage
+2016-03-31 12:45:58,506 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for ESP8266/voltage
+2016-03-31 12:45:58,570 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to ESP8266/voltage
+2016-03-31 12:46:09,311 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to ESP8266/power
+2016-03-31 12:46:09,312 INFO  [JavaFX Application Thread     ] [SubscriptionManager           ]  - Creating subscription for ESP8266/power
+2016-03-31 12:46:09,351 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to ESP8266/power
+2016-03-31 12:46:40,697 ERROR [JavaFX Application Thread     ] [BaseConfigurationUtils        ]  - Invalid number format 
