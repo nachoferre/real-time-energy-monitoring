@@ -2,8 +2,8 @@ require ("ina219")
 
  --wifi--
  wifi.setmode(wifi.STATION)
- --wifi.sta.config("ferreras_wifi","3sp1n0s23BI2016")
- wifi.sta.config("Android-connection","3sp1n0s23BI2016")
+ --wifi.sta.config("ferreras_wifi","PASS_HERE")
+ wifi.sta.config("Android-connection","PASS_HERE")
  wifi.sta.connect()
  connected = false
  tmr.alarm(1, 1000, 1, function()
