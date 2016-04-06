@@ -1,3 +1,5 @@
+require ("ina219")
+
  --wifi--
  wifi.setmode(wifi.STATION)
  --wifi.sta.config("ferreras_wifi","3sp1n0s23BI2016")
@@ -12,7 +14,7 @@
     print("The module MAC address is: " .. wifi.ap.getmac())
     print("Config done, IP is "..wifi.sta.getip())
     print(wifi.sta.status())
-    
+
     m = mqtt.Client("nacho", 120, mqtt_username, mqtt_password)
     m:connect( mqtt_broker_ip , mqtt_broker_port, 0, function(conn)
         print("Connected to MQTT")
@@ -27,16 +29,16 @@
 end)
 
 --mqtt--
-mqtt_broker_ip = "192.168.43.247"     
+mqtt_broker_ip = "192.168.43.247"
 mqtt_broker_port = 1883
-mqtt_username = ""
-mqtt_password = ""
+mqtt_username = "ina219"
+mqtt_password = "ESP8266"
 mqtt_client_id = "ina"
 time_between_sensor_readings = 60
 
-power = 1
-current = 2
-voltage = 3
+ina_1_adr = 0x40
+ina_1 = ina219:new()
+ina_1:init(ina_1_adr)
 
 tmr.alarm(2, 1000, 1, function()
     if connected == false then
@@ -55,21 +57,24 @@ function connection_mqtt()
     if i == 100 then
         tmr.stop(2)
     end
+    current = ina_1:read_current()
     m:publish("ESP8266/current",(current / 10), 0, 0, function(conn)
                 print("Current sent.")
                 cur = true
         end)
+    voltage = ina_1:read_voltage()
     m:publish("ESP8266/voltage",(voltage / 10), 0, 0, function(conn)
                 print("Voltage sent.")
                 vol = true
         end)
+    power = ina_1:read_power()
     m:publish("ESP8266/power",(power / 10), 0, 0, function(conn)
                 print("Power sent.")
-                pwr = true         
-        end)  
+                pwr = true
+        end)
     if cur and pwr and vol then
         i = i + 1
-        print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds") 
+        print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds")
         node.dsleep(time_between_sensor_readings*1000)
     else
         print("There has been a problem in the mqtt process")
@@ -78,5 +83,3 @@ function connection_mqtt()
         print("Power: ".. tostring(pwr))
     end
 end
-
-
