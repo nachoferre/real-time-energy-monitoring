@@ -60,26 +60,18 @@ function connection_mqtt()
     current = ina_1:read_current()
     m:publish("ESP8266/current",(current / 10), 0, 0, function(conn)
                 print("Current sent.")
-                cur = true
         end)
     voltage = ina_1:read_voltage()
     m:publish("ESP8266/voltage",(voltage / 10), 0, 0, function(conn)
                 print("Voltage sent.")
-                vol = true
         end)
     power = ina_1:read_power()
     m:publish("ESP8266/power",(power / 10), 0, 0, function(conn)
                 print("Power sent.")
-                pwr = true
         end)
-    if cur and pwr and vol then
-        i = i + 1
-        print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds")
-        node.dsleep(time_between_sensor_readings*1000)
-    else
-        print("There has been a problem in the mqtt process")
-        print("Current: ".. tostring(cur))
-        print("Voltage: ".. tostring(vol))
-        print("Power: ".. tostring(pwr))
-    end
+    
+    i = i + 1
+    print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds")
+    node.dsleep(time_between_sensor_readings*1000)
+
 end
