@@ -2,8 +2,8 @@ require ("ina219")
 
  --wifi--
  wifi.setmode(wifi.STATION)
- --wifi.sta.config("ferreras_wifi","PASS_HERE")
- wifi.sta.config("Android-connection","PASS_HERE")
+ wifi.sta.config("ferreras_wifi","3sp1n0s23BI2016")
+ --wifi.sta.config("Android-connection","PASS_HERE")
  wifi.sta.connect()
  connected = false
  tmr.alarm(1, 1000, 1, function()
@@ -29,16 +29,23 @@ require ("ina219")
 end)
 
 --mqtt--
-mqtt_broker_ip = "192.168.43.247"
-mqtt_broker_port = 1883
+mqtt_broker_ip = "192.168.1.85"
+mqtt_broker_port = 8266
 mqtt_username = "ina219"
 mqtt_password = "ESP8266"
 mqtt_client_id = "ina"
-time_between_sensor_readings = 60
+time_between_sensor_readings = 6000
+--node.dsleep(0)
 
-ina_1_adr = 0x40
-ina_1 = ina219:new()
-ina_1:init(ina_1_adr)
+ina_list = {}
+ina_adr = 0x40
+j= 0
+for i=1,8
+do
+  ina_list[i] = ina219:new()
+  ina_list[i]:init(ina_adr)
+  ina_adr = ina_adr + 1
+end
 
 tmr.alarm(2, 1000, 1, function()
     if connected == false then
@@ -49,28 +56,22 @@ tmr.alarm(2, 1000, 1, function()
 end)
 
 function connection_mqtt()
-    print("  IP: ".. mqtt_broker_ip)
-    print("  Port: ".. mqtt_broker_port)
-    print("  Client ID: ".. mqtt_client_id)
-    print("  Username: ".. mqtt_username)
-    cur,pwr,vol=false,false,false
-    if i == 100 then
-        tmr.stop(2)
-    end
-    current = ina_1:read_current()
-    m:publish("ESP8266/0/current",(current / 10), 0, 0, function(conn)
-                print("Current sent.")
-        end)
-    voltage = ina_1:read_voltage()
-    m:publish("ESP8266/0/voltage",(voltage / 10), 0, 0, function(conn)
-                print("Voltage sent.")
-        end)
-    power = ina_1:read_power()
-    m:publish("ESP8266/0/power",(power / 10), 0, 0, function(conn)
-                print("Power sent.")
-        end)
 
-    i = i + 1
+    for i=1,8 do
+        current = ina_list[i]:read_current()
+        voltage = ina_list[i]:read_voltage()
+        power = ina_list[i]:read_power()
+        print(tostring(current))
+        m:publish("ESP8266/0/"..tostring(i).."/current",current , 0, 0, function(conn)
+            print("Current sent.")
+            m:publish("ESP8266/0/"..tostring(i).."/voltage",voltage, 0, 0, function(conn)
+                print("Voltage sent.")
+                m:publish("ESP8266/0/"..tostring(i).."/power",power, 0, 0, function(conn)
+                    print("Power sent.")
+                end)
+            end)
+        end)
+    end
     print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds")
     node.dsleep(time_between_sensor_readings*1000)
 
