@@ -58,18 +58,18 @@ function connection_mqtt()
         tmr.stop(2)
     end
     current = ina_1:read_current()
-    m:publish("ESP8266/current",(current / 10), 0, 0, function(conn)
+    m:publish("ESP8266/0/current",(current / 10), 0, 0, function(conn)
                 print("Current sent.")
         end)
     voltage = ina_1:read_voltage()
-    m:publish("ESP8266/voltage",(voltage / 10), 0, 0, function(conn)
+    m:publish("ESP8266/0/voltage",(voltage / 10), 0, 0, function(conn)
                 print("Voltage sent.")
         end)
     power = ina_1:read_power()
-    m:publish("ESP8266/power",(power / 10), 0, 0, function(conn)
+    m:publish("ESP8266/0/power",(power / 10), 0, 0, function(conn)
                 print("Power sent.")
         end)
-    
+
     i = i + 1
     print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds")
     node.dsleep(time_between_sensor_readings*1000)
