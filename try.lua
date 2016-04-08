@@ -47,7 +47,7 @@ do
   ina_adr = ina_adr + 1
 end
 
-tmr.alarm(2, 1000, 1, function()
+tmr.alarm(2, 5000, 1, function()
     if connected == false then
         print("Awaiting for connection....")
     else
