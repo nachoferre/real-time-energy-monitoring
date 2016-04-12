@@ -38,13 +38,12 @@ time_between_sensor_readings = 6000
 --node.dsleep(0)
 
 ina_list = {}
-ina_adr = 0x40
+ina_adr = {0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47}
 j= 0
 for i=1,8
 do
   ina_list[i] = ina219:new()
-  ina_list[i]:init(ina_adr)
-  ina_adr = ina_adr + 1
+  ina_list[i]:init(ina_adr[i])
 end
 
 tmr.alarm(2, 5000, 1, function()
