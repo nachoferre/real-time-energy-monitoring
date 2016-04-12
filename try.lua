@@ -2,8 +2,8 @@ require ("ina219")
 
  --wifi--
  wifi.setmode(wifi.STATION)
- wifi.sta.config("ferreras_wifi","3sp1n0s23BI2016")
- --wifi.sta.config("Android-connection","PASS_HERE")
+ --wifi.sta.config("ferreras_wifi","PASS_HERE")
+ wifi.sta.config("Android-connection","3sp1n0s23BI2016")
  wifi.sta.connect()
  connected = false
  tmr.alarm(1, 1000, 1, function()
@@ -29,7 +29,7 @@ require ("ina219")
 end)
 
 --mqtt--
-mqtt_broker_ip = "192.168.1.85"
+mqtt_broker_ip = "192.168.43.247"
 mqtt_broker_port = 8266
 mqtt_username = "ina219"
 mqtt_password = "ESP8266"
@@ -62,17 +62,17 @@ function connection_mqtt()
         voltage = ina_list[i]:read_voltage()
         power = ina_list[i]:read_power()
         print(tostring(current))
-        m:publish("ESP8266/0/"..tostring(i).."/current",current , 0, 0, function(conn)
+        m:publish("ESP8266/0/"..tostring(i).."/1",current , 0, 0, function(conn)
             print("Current sent.")
             end)
-        m:publish("ESP8266/0/"..tostring(i).."/voltage",voltage, 0, 0, function(conn)
+        m:publish("ESP8266/0/"..tostring(i).."/2",voltage, 0, 0, function(conn)
             print("Voltage sent.")
             end)
-        m:publish("ESP8266/0/"..tostring(i).."/power",power, 0, 0, function(conn)
+        m:publish("ESP8266/0/"..tostring(i).."/3",power, 0, 0, function(conn)
             print("Power sent.")
             end)
     end
     print("Going to deep sleep for "..(time_between_sensor_readings/1000).." seconds")
-    node.dsleep(time_between_sensor_readings*1000)
+    --node.dsleep(time_between_sensor_readings*1000)
 
 end
