@@ -10,5 +10,10 @@ Para ello simplemente hemos de cargar en la placa los 3 ficheros y ejecutar el s
 
 sudo php phpmqtt_input.php&
 
-TODO investigar freeboard.io conexion con mqtt
-TODO cambiar el refresco de envio de datos
+paginas de configuracion
+
+  Configuracion de mosquito
+    http://www.rs-online.com/designspark/electronics/eng/blog/building-distributed-node-red-applications-with-mqtt
+
+  Configuracion node-red y freeboard
+    https://primalcortex.wordpress.com/2015/02/25/setting-up-an-iot-frameworkdashboard-with-nodered-moscamosquitto-and-freeboard-io-dashboard/
