@@ -17,3 +17,7 @@ paginas de configuracion
 
   Configuracion node-red y freeboard
     https://primalcortex.wordpress.com/2015/02/25/setting-up-an-iot-frameworkdashboard-with-nodered-moscamosquitto-and-freeboard-io-dashboard/
+
+
+start mosca
+mosca -p 8266 --http-port 9001 -v --credentials /home/nacho/Desktop/tfg-ina219-power/Lua/credentials.json

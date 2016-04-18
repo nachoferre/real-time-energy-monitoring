@@ -92,5 +92,7 @@ local ina219_mt = Class(ina219)
 
         return result / self.power_num
     end
-    
+    function ina219:set_adr(adr)
+        ina219.address = adr
+    end
 return ina219;
