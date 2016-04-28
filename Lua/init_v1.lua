@@ -19,6 +19,9 @@ function connection_mqtt()
         local current = ina_chip:read_current()
         local voltage = ina_chip:read_voltage()
         local power = ina_chip:read_power()
+        print(tostring(power))
+        print(tostring(voltage))
+        print(tostring(current))
         ina_chip = nil
         m:publish("/ESP8266/0/"..tostring(j).."/current",current , 0, 0, function(conn)
             print("Current sent.")
@@ -38,8 +41,8 @@ end
 --wifi--
 wifi.setmode(wifi.STATION)
 --wifi.sta.config("ferreras_wifi","PASS_HERE")
-wifi.sta.config("Android-connection","3sp1n0s23BI2016")
---wifi.sta.config("FUNDASETH1","PASS_HERE")
+--wifi.sta.config("Android-connection","3sp1n0s23BI2016")
+wifi.sta.config("linksys_223","linksys223")
 wifi.sta.connect()
 connected = false
 m = mqtt.Client(mqtt_client_id, 1200000000, mqtt_username, mqtt_password)
@@ -64,7 +67,6 @@ tmr.alarm(1, 1000, 1, function()
           connected = true
           tmr.unregister(1)
           end )
-      print(a)
     end
 end)
 
@@ -84,7 +86,7 @@ m:on("message", function(conn, topic, data)
 end)
 
 --mqtt--
-mqtt_broker_ip = "192.168.43.247"
+mqtt_broker_ip = "192.168.1.6"
 mqtt_broker_port = 8266
 mqtt_username = ""
 mqtt_password = ""
