@@ -1,0 +1,148 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1,
+				"5": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 2,
+				"5": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Potencia ina 1",
+						"size": "regular",
+						"value": "(datasources[\"esp-1\"][\"ina-1\"][\"power\"]/1000).toFixed(2)",
+						"animate": true,
+						"units": "W"
+					}
+				},
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Potencias",
+						"value": [
+							"(datasources[\"esp-1\"][\"ina-1\"][\"power\"]/1000).toFixed(2)",
+							"(datasources[\"esp-1\"][\"ina-2\"][\"power\"]/1000).toFixed(2)"
+						],
+						"include_legend": true,
+						"legend": "ina1, ina2"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Potencia ina 2",
+						"size": "regular",
+						"value": "(datasources[\"esp-1\"][\"ina-2\"][\"power\"]/1000).toFixed(2)",
+						"animate": true,
+						"units": "W"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Potencia Total",
+						"size": "regular",
+						"value": "// Example: Convert temp from C to F and truncate to 2 decimal places.\n// return (datasources[\"MyDatasource\"].sensor.tempInF * 1.8 + 32).toFixed(2);\nreturn (datasources[\"esp-1\"][\"ina-1\"][\"power\"]/1000).toFixed(2) + (datasources[\"esp-1\"][\"ina-2\"][\"power\"]/1000).toFixed(2)",
+						"sparkline": true,
+						"animate": true,
+						"units": "W"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1,
+				"5": 1
+			},
+			"col": {
+				"3": 2,
+				"4": 3,
+				"5": 4
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Corriente ina 1",
+						"size": "regular",
+						"value": "(datasources[\"esp-1\"][\"ina-1\"][\"current\"]/1000).toFixed(2)",
+						"sparkline": true,
+						"animate": true,
+						"units": "A"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Corriente ina 2",
+						"size": "regular",
+						"value": "(datasources[\"esp-1\"][\"ina-2\"][\"current\"]/1000).toFixed(2)",
+						"sparkline": true,
+						"animate": true,
+						"units": "A"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1,
+				"5": 1
+			},
+			"col": {
+				"3": 3,
+				"4": 4,
+				"5": 5
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Voltaje ina 1",
+						"value": "(datasources[\"esp-1\"][\"ina-1\"][\"voltage\"]/1000).toFixed(3)",
+						"units": "V",
+						"min_value": 0,
+						"max_value": 100
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Voltaje ina 2",
+						"value": "(datasources[\"esp-1\"][\"ina-3\"][\"voltage\"]/1000).toFixed(3)",
+						"units": "V",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "esp-1",
+			"type": "esp1",
+			"settings": {}
+		}
+	],
+	"columns": 3
+}
