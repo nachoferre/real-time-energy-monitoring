@@ -43,9 +43,20 @@ Mongo es el servidor que utilizaremos para la persistencia, este se puede cambia
 ```bash
 ~$  sudo apt-get install -i mongodb
 ```
-#### Freeboard
-Freeboard no requiere instalacion especifica ya que lo hemos instalado con el paquete del node-red-contrib-freeboard
+Una vez que ya hemos instalado vamos a crear la base de datos y las colleciones que vamos a usar para la persistencia de nuestro sistema.
+en la shell de mongo ejecutamos los siguientes comandos:
+```bash
+~$ use ESP8266
+~$ db.createCollection("input")
+~$ db.createCollection("output")
+```
 
+#### Freeboard
+Freeboard no requiere instalacion especifica ya que lo hemos instalado con el paquete del node-red-contrib-freeboard. Cuya carpeta se encuentra:
+```bash
+~$ .node-red/node-modules/node-red-contrib-freeboard/node-modules/freeboard
+```
+En caso de que se quiera añadir plugins o editar el codigo.
 ## Ejecución
 Para ejecutar hemos de cargar los archivos del repositorio en el ESP8266. Para ello usamos el [ESPlorer](http://esp8266.ru/esplorer/).
 Despues hemos de levantar node-red y mosca respectivamente, en terminales separadas
@@ -55,5 +66,9 @@ Despues hemos de levantar node-red y mosca respectivamente, en terminales separa
 ```bash
 ~$  mosca -p 8266 --very-verbose | bunyan
 ```
+Una vez que ambos sistemas estan levantados y funcionando accedemos a node-red y cargamos el flow que esta en la carpeta Node-Red. Hay que copiar dicho archivo a
+            "~/.node-red/lib/flows"
+Una vez que tengamos los flows solo tenemos que hacer el deploy.
+
 Para acceder a freeboard nos vamos a la siguiente url
-[freeboard](http://127.0.0.1:1880/freeboard). La configuracion de los flujos de node-red apareceran como entradas en freeboard. Mas adelante se añadiran los archivos de flujo y el dashboard de freeboard para su completo uso.
+[freeboard](http://127.0.0.1:1880/freeboard). La configuracion de los flujos de node-red apareceran como entradas en freeboard. Para cargar el dashboard simplemente le damos al boton de "Load Dashboard" y seleccionamos el .json de la carpeta "freeboard-dashboard"
