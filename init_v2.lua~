@@ -89,7 +89,7 @@ end)
 
 m:on("message", function(conn, topic, data)
     print("message recieved. Topic: "..topic)
-    if topic == "/Node-Red/sleep" then
+    if topic == "/Node-Red/sleep/0/" then
         if type(data) == "string" then
             message = tonumber(message)
             time_between_sensor_readings = data
@@ -98,7 +98,7 @@ m:on("message", function(conn, topic, data)
             print("Format not accepted")
         end
 --new subs to be treated here
-    elseif topic == "/Node-Red/power_enable" then
+    elseif topic == "/Node-Red/power_enable/0/" then
         if type(data) == "string" then
             message = tonumber(message)
             if power_enable[message] then
@@ -110,7 +110,7 @@ m:on("message", function(conn, topic, data)
         else
             print("Format not accepted")
         end
-    elseif topic == "/Node-Red/current_enable" then
+    elseif topic == "/Node-Red/current_enable/0/" then
         if type(data) == "string" then
             message = tonumber(message)
             if current_enable[message] then
@@ -122,7 +122,7 @@ m:on("message", function(conn, topic, data)
         else
             print("Format not accepted")
         end
-    elseif topic == "/Node-Red/voltage_enable" then
+    elseif topic == "/Node-Red/voltage_enable/0/" then
         if type(data) == "string" then
             message = tonumber(message)
             if voltage_enable[message] then
