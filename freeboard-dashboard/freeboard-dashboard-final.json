@@ -54,7 +54,7 @@
 					"settings": {
 						"title": "Potencia Total",
 						"size": "regular",
-						"value": "// Example: Convert temp from C to F and truncate to 2 decimal places.\n// return (datasources[\"MyDatasource\"].sensor.tempInF * 1.8 + 32).toFixed(2);\nreturn (datasources[\"esp-1\"][\"ina-1\"][\"power\"]/1000).toFixed(2) + (datasources[\"esp-1\"][\"ina-2\"][\"power\"]/1000).toFixed(2)",
+						"value": "var num1 = parseFloat(datasources[\"esp-1\"][\"ina-1\"][\"power\"]/1000);\nvar num2 = parseFloat(datasources[\"esp-1\"][\"ina-2\"][\"power\"]/1000);\nvar suma = num1 + num2;\nreturn suma.toFixed(2)",
 						"sparkline": true,
 						"animate": true,
 						"units": "W"
@@ -128,7 +128,7 @@
 					"type": "gauge",
 					"settings": {
 						"title": "Voltaje ina 2",
-						"value": "(datasources[\"esp-1\"][\"ina-3\"][\"voltage\"]/1000).toFixed(3)",
+						"value": "(datasources[\"esp-1\"][\"ina-2\"][\"voltage\"]/1000).toFixed(3)",
 						"units": "V",
 						"min_value": 0,
 						"max_value": 100
